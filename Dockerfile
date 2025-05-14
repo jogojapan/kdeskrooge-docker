@@ -16,9 +16,13 @@ RUN useradd -m user
 USER user
 WORKDIR /home/user
 
+RUN mkdir -p /home/user/.config /home/user/.local/share
+
 # Set environment variables for X11
 ENV DISPLAY=:0
 ENV QT_X11_NO_MITSHM=1
+ENV QT_STYLE_OVERRIDE=breeze-dark
+ENV QT_QPA_PLATFORMTHEME=qt5ct
 
 # Entry point to start Skrooge
 CMD ["skrooge"]
