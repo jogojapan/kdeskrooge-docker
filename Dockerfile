@@ -11,6 +11,12 @@ RUN dnf -y update && \
     qt5-qtbase \
     dbus \
     glibc-langpack-en \
+    glibc-langpack-ja \
+    google-noto-sans-cjk-jp-fonts \
+    google-noto-serif-jp-fonts \
+    ipa-gothic-fonts \
+    ipa-mincho-fonts \
+    vlgothic-fonts \
     && dnf clean all
 
 # Create a non-root user
@@ -22,6 +28,7 @@ RUN mkdir -p /home/user/.config /home/user/.local/share
 
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
+ENV LANGUAGE=en_US:ja_JP
 
 # Set environment variables for X11
 ENV DISPLAY=:0
