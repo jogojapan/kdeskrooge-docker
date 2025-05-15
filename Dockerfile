@@ -18,6 +18,9 @@ WORKDIR /home/user
 
 RUN mkdir -p /home/user/.config /home/user/.local/share
 
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
+
 # Set environment variables for X11
 ENV DISPLAY=:0
 ENV QT_X11_NO_MITSHM=1
