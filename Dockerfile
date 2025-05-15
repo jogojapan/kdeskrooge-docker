@@ -9,6 +9,8 @@ RUN dnf -y update && \
     libxcb \
     mesa-dri-drivers \
     qt5-qtbase \
+    dbus \
+    glibc-langpack-en \
     && dnf clean all
 
 # Create a non-root user
@@ -24,8 +26,6 @@ ENV LC_ALL=en_US.UTF-8
 # Set environment variables for X11
 ENV DISPLAY=:0
 ENV QT_X11_NO_MITSHM=1
-ENV QT_STYLE_OVERRIDE=breeze-dark
-ENV QT_QPA_PLATFORMTHEME=qt5ct
 
 # Entry point to start Skrooge
-CMD ["skrooge"]
+CMD ["bash", "-c", "mkdir -p /tmp/dbus && dbus-daemon --session --address=unix:path=/tmp/dbus/session_bus_socket & export DBUS_SESSION_BUS_ADDRESS=unix:path=/tmp/dbus/session_bus_socket && skrooge"]
