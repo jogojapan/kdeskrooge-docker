@@ -19,7 +19,7 @@ docker run -it --rm \
   -v /run/dbus:/run/dbus:ro \
   -v /etc/localtime:/etc/localtime:ro \
   --device /dev/dri \
-  --name fedora42-skrooge \
-  kdeskrooge
+  --name fedora43-skrooge \
+  kdeskrooge:f43
 
 xhost -local:docker
