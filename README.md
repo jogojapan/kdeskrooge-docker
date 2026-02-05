@@ -1,8 +1,17 @@
 # kdeskrooge-docker
 
+This package (and the Docker image you can build from it) will help
+you if you use the personal-finances manager "Skrooge" on multiple
+laptops/PCs and need to be sure it's the same version of Skrooge
+everyone (to avoid DB inconsistencies if they all store the DB to a
+shared location).
+
 This is a Dockerfile and start script for a container I use to run the
-Fedora-42 version of Skrooge, the personal finances manager software
-for KDE.
+Fedora-42, Fedora-43 and other versions of Skrooge, including latest
+versions built from source, the personal finances manager software for
+KDE. The image is based on a Fedora base image, and I use this to run,
+on various OS and laptops, the same version of Skrooge that I am using
+on my main PC, which happens to run Fedora.
 
 To build the image, use:
 
